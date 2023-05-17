@@ -3,6 +3,37 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
+<%--<script>--%>
+<%--    let item_get = {--%>
+<%--        init: function () {--%>
+<%--            $('#cart_btn').click(function () {--%>
+<%--                let cust_id = $('#cust_id').val();--%>
+<%--                let item_id = $('#item_id').val();--%>
+<%--                let cnt = null;--%>
+<%--                $.ajax({--%>
+<%--                    url: '/addcart',--%>
+<%--                    data: {cust_id: cust_id, item_id: item_id, cnt: 1},--%>
+<%--                    success: function () {--%>
+<%--                        alert("¼º°ø")--%>
+<%--                        //$('#myModal').modal();--%>
+<%--                    },--%>
+<%--                    error:()=>{--%>
+<%--                        alert("tlfvo")--%>
+<%--                    }--%>
+<%--                });--%>
+
+<%--                // $('#cart_form').attr({--%>
+<%--                //     method: 'get',--%>
+<%--                //     action: '/addcart'--%>
+<%--                // });--%>
+<%--                // $('#cart_form').submit();--%>
+<%--            });--%>
+<%--        }--%>
+<%--    };--%>
+<%--    $(function () {--%>
+<%--        item_get.init();--%>
+<%--    });--%>
+<%--</script>--%>
 
 <div class="col-sm-8 text-center">
 
@@ -30,18 +61,20 @@
                                     <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
+<%--                                <input type="hidden" id="cust_id" value="${logincust.id}">--%>
+<%--                                <input type="hidden" id="item_id" value="${obj.id}">--%>
                                 <fmt:formatNumber value="${obj.price}" pattern="###,###¿ø"/>
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><button type="button" id="cart_btn" class="btn btn-outline-dark mt-auto" >Add to cart</button></div>
                         </div>
                     </div>
                   </div>
                 </c:forEach>
+<%--                <jsp:include page="page.jsp"/>--%>
             </div>
         </div>
     </section>
-
 </div>

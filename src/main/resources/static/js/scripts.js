@@ -1,7 +1,26 @@
-/*!
-* Start Bootstrap - Heroic Features v5.0.6 (https://startbootstrap.com/template/heroic-features)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-heroic-features/blob/master/LICENSE)
-*/
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
+let item_get = {
+    init: function () {
+        $('#cart_btn').click(function () {
+            let cust_id = '${logincust.id}';
+            let item_id = '${gitem.id}';
+            let cnt = null;
+            $.ajax({
+                url: '/addcart',
+                data: {cust_id: cust_id, item_id: item_id, cnt: 1},
+                success: function () {
+                    alert("성공")
+                    //$('#myModal').modal();
+                }
+            });
+
+            // $('#cart_form').attr({
+            //     method: 'get',
+            //     action: '/addcart'
+            // });
+            // $('#cart_form').submit();
+        });
+    }
+};
+$(function () {
+    item_get.init();
+});

@@ -136,7 +136,7 @@ a.main-logo:hover {
   font-weight: bold;
 }
 
-.row.content {height: 100%}
+.row.content {height: 1000px}
 footer {
   background-color: #555;
   color: white;
